@@ -1,65 +1,154 @@
-# Superstore Sales Intelligence — Data Analytics Portfolio Project
+# Superstore Sales Dashboard
 
-A retail sales analytics project built on the well-known public **"Sample
-Superstore"** dataset — the same dataset used in thousands of Power BI/Tableau
-tutorials, so it's instantly recognizable to anyone reviewing your portfolio.
-This version replaces the earlier synthetic dataset with **real transaction
-data**, including a genuine data-cleaning step.
+This project is a simple sales analysis project using the **Sample Superstore** dataset.
+I used Python to clean the data, study the sales and profit, and create an interactive dashboard.
 
-## What's in this project
+## About the Project
 
-| File | Purpose |
+The main goal of this project is to understand:
+
+- How much the company sells
+- How much profit the company makes
+- Which products make more profit
+- Which products are making a loss
+- Which regions and states have more sales
+- How sales change over time
+
+## Files in This Project
+
+| File |
 |---|---|
-| `real_superstore.csv` | Raw source file, downloaded from a public GitHub mirror |
-| `clean_data.py` | Cleans the raw file — strips out two accidentally-merged extra tables (a region lookup and a returns list) that were appended below the real order data, parses dates, fixes types |
-| `superstore_clean.csv` | The cleaned dataset — 9,994 real US orders (2015–2018), 21 columns |
-| `analyze_real.py` | Pandas analysis — KPIs, monthly trend, category/sub-category/region/state/product/segment breakdowns |
-| `dashboard_data_real.json` | Output of the analysis |
-| `dashboard_real.html` | Interactive standalone dashboard — open directly in any browser |
+| `real_superstore.csv` | Original sales data |
+| `clean_data.py` | Cleans the original data |
+| `superstore_clean.csv` | Clean data ready for analysis |
+| `analyze_real.py` | Analyzes the sales data |
+| `dashboard_data_real.json` | Data used for the dashboard |
+| `dashboard_real.html` | Interactive sales dashboard |
 
-## Why this matters more than the synthetic version
+## Tools Used
 
-Real datasets are messy. This one had two other tables silently pasted
-below row 9,994 of the CSV — a problem you'd absolutely hit in a real job.
-Handling that (rather than assuming clean data) is exactly the kind of
-judgment call interviewers want to hear about.
+- Python
+- Pandas
+- HTML
+- CSS
+- JavaScript
+- Chart.js
+- GitHub
 
-## Key insights the dashboard surfaces
+## What I Did
 
-- **Total sales**: $2.30M across 9,994 orders, 12.5% overall profit margin
-- **The headline finding**: Tables (-$17,725), Bookcases (-$3,473), and
-  Supplies (-$1,189) are sold at a **net loss** — despite generating real
-  revenue, they lose money once discounts are factored in. Technology and
-  Office Supplies, by contrast, are healthy — Technology alone contributes
-  over half of total profit.
-- **Seasonality**: Q4 (Sep–Nov) is consistently the strongest quarter across
-  all four years — useful for staffing and inventory planning
-- **Geography**: California and New York alone account for roughly a third
-  of total sales — a concentration worth flagging in any regional strategy
-  discussion
+### 1. Cleaned the Data
 
-## How to use it
+The original file had some extra data added at the bottom.
 
-1. Open `dashboard_real.html` in any browser — fully self-contained
-2. To re-run from scratch: `python3 clean_data.py` then `python3 analyze_real.py`
+I checked the file, removed the extra records, fixed the data types, and created a clean dataset.
 
-## Suggested resume bullets for this project
+The final dataset has **9,994 valid orders**.
 
-**Retail sales & profitability analysis** *(Python, Pandas, Chart.js)*
-- Cleaned a real 10,800-row transactional dataset, identifying and removing
-  two erroneously merged tables to recover 9,994 valid order records
-- Analyzed sales and profit across regions, categories, and time, identifying
-  three sub-categories generating negative profit despite positive revenue
-- Built an interactive dashboard surfacing seasonal trends, regional
-  concentration, and margin risks for non-technical stakeholders
+### 2. Analyzed the Data
 
-## Suggested next steps to strengthen this further
+I used Python and Pandas to look at:
 
-- Rebuild the same analysis in actual Power BI (since your resume lists
-  Power BI) using `superstore_clean.csv` — screenshot it for your portfolio
-- Write a one-paragraph recommendation: e.g. "investigate discount policy on
-  Tables — average discount is unusually high relative to margin" — this is
-  the kind of narrative an analyst is actually hired to produce
-- Push this to GitHub with a clear commit history: one commit for the raw
-  data, one for the cleaning step, one for the analysis — this alone shows
-  process, not just output
+- Total sales
+- Total profit
+- Profit margin
+- Sales by month and year
+- Sales by region and state
+- Sales by category
+- Profit by sub-category
+- Customer segments
+- Product performance
+
+### 3. Created a Dashboard
+
+I created an interactive dashboard using HTML, JavaScript, and Chart.js.
+
+The dashboard makes it easy to see the main sales and profit information through charts and numbers.
+
+## Some Key Findings
+
+- Total sales are around **$2.30 million**.
+- The dataset contains **9,994 valid orders**.
+- Some product groups make a loss even though they have sales.
+- **Tables, Bookcases, and Supplies** show an overall loss in this analysis.
+- Technology products are an important source of profit.
+- Sales are generally stronger toward the end of the year.
+- California and New York are among the major sales states.
+
+## How to Run the Project
+
+### Step 1: Install Python
+
+Make sure Python is installed on your computer.
+
+Check it with:
+
+```bash
+python --version
+```
+
+### Step 2: Install Pandas
+
+```bash
+pip install pandas
+```
+
+### Step 3: Clean the Data
+
+Run:
+
+```bash
+python clean_data.py
+```
+
+This creates:
+
+```text
+superstore_clean.csv
+```
+
+### Step 4: Run the Analysis
+
+Run:
+
+```bash
+python analyze_real.py
+```
+
+This creates:
+
+```text
+dashboard_data_real.json
+```
+
+### Step 5: Open the Dashboard
+
+Open this file in your browser:
+
+```text
+dashboard_real.html
+```
+
+You do not need to install a web server to view the dashboard.
+
+## What I Learned
+
+Through this project, I practiced:
+
+- Working with real-world data
+- Cleaning messy data
+- Using Python and Pandas
+- Finding useful information from data
+- Understanding sales and profit
+- Creating charts and dashboards
+- Presenting data in a simple way
+
+## Future Improvements
+
+I can improve this project by:
+
+- Creating the same dashboard in Power BI
+- Adding more filters
+- Adding sales forecasting
+- Adding more charts
+- Publishing the dashboard online

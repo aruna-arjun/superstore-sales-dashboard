@@ -14,17 +14,6 @@ The main goal of this project is to understand:
 - Which regions and states have more sales
 - How sales change over time
 
-## Files in This Project
-
-| File |
-|---|---|
-| `real_superstore.csv` | Original sales data |
-| `clean_data.py` | Cleans the original data |
-| `superstore_clean.csv` | Clean data ready for analysis |
-| `analyze_real.py` | Analyzes the sales data |
-| `dashboard_data_real.json` | Data used for the dashboard |
-| `dashboard_real.html` | Interactive sales dashboard |
-
 ## Tools Used
 
 - Python
